@@ -21,7 +21,7 @@ public class RestController {
 
         Logic logic = new Logic(entity);
 
-        return ResponseEntity.ok(gson.toJson(logic.calculate()));
+        return ResponseEntity.ok(gson.toJson(logic.calculateMiddleman()));
     }
 
     @RequestMapping(value="/linear", method = RequestMethod.POST)

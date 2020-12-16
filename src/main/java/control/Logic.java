@@ -27,7 +27,7 @@ public class Logic {
         this.json = json;
     }
 
-    public PointValuePair calculate() {
+    public PointValuePair calculateMiddleman() {
 
         inputModel = new InputModel(json);
 
@@ -36,13 +36,13 @@ public class Logic {
 
         Collection<LinearConstraint> constraints = new ArrayList<>();
 
-        constraints.add(new LinearConstraint(new double[]{1, 1, 0, 0, 0, 0, 0, 0}, Relationship.LEQ, inputModel.getSupply()[0]));
-        constraints.add(new LinearConstraint(new double[]{0, 0, 1, 1, 0, 0, 0, 0}, Relationship.LEQ, inputModel.getSupply()[1]));
-        constraints.add(new LinearConstraint(new double[]{0, 0, 0, 0, 1, 1, 0, 0}, Relationship.LEQ, inputModel.getSupply()[2]));
-        constraints.add(new LinearConstraint(new double[]{0, 0, 0, 0, 0, 0, 1, 1}, Relationship.LEQ, inputModel.getSupply()[3]));
+        constraints.add(new LinearConstraint(new double[]{1, 1, 0, 0, 0, 0, 0, 0}, Relationship.EQ, inputModel.getSupply()[0]));
+        constraints.add(new LinearConstraint(new double[]{0, 0, 1, 1, 0, 0, 0, 0}, Relationship.EQ, inputModel.getSupply()[1]));
+        constraints.add(new LinearConstraint(new double[]{0, 0, 0, 0, 1, 1, 0, 0}, Relationship.EQ, inputModel.getSupply()[2]));
+        constraints.add(new LinearConstraint(new double[]{0, 0, 0, 0, 0, 0, 1, 1}, Relationship.EQ, inputModel.getSupply()[3]));
 
-        constraints.add(new LinearConstraint(new double[]{1, 0, 1, 0, 1, 0, 1, 0}, Relationship.LEQ, inputModel.getDemand()[0]));
-        constraints.add(new LinearConstraint(new double[]{0, 1, 0, 1, 0, 1, 0, 1}, Relationship.LEQ, inputModel.getDemand()[1]));
+        constraints.add(new LinearConstraint(new double[]{1, 0, 1, 0, 1, 0, 1, 0}, Relationship.EQ, inputModel.getDemand()[0]));
+        constraints.add(new LinearConstraint(new double[]{0, 1, 0, 1, 0, 1, 0, 1}, Relationship.EQ, inputModel.getDemand()[1]));
 
 
             SimplexSolver solver = new SimplexSolver();
