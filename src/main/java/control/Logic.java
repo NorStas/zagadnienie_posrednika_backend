@@ -1,12 +1,6 @@
 package control;
 
 import entities.JsonEntity;
-import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
-import control.InputModel;
 import org.apache.commons.math3.optimization.GoalType;
 import org.apache.commons.math3.optimization.PointValuePair;
 import org.apache.commons.math3.optimization.linear.LinearConstraint;
@@ -14,8 +8,6 @@ import org.apache.commons.math3.optimization.linear.LinearObjectiveFunction;
 import org.apache.commons.math3.optimization.linear.Relationship;
 import org.apache.commons.math3.optimization.linear.SimplexSolver;
 
-import java.awt.image.BufferedImage;
-import java.io.*;
 import java.util.ArrayList;
 import java.util.Collection;
 
