@@ -4,30 +4,29 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import entities.JsonEntity;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.*;
 
-import javax.validation.Valid;
 
-@org.springframework.web.bind.annotation.RestController
 @CrossOrigin
+@Controller
 public class RestController {
 
-    private static Gson gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().create();
+    private static Gson gson = new GsonBuilder().create();
 
-
-    @RequestMapping(value="/middleman", method = RequestMethod.POST)
-    public ResponseEntity<String> calculateMiddleman(@Valid @RequestBody String data) {
+    @RequestMapping(value="/middleman", method = RequestMethod.POST, produces = "application/json")
+    @ResponseBody
+    public ResponseEntity<String> calculateMiddleman(@RequestBody String data) {
         JsonEntity entity = gson.fromJson(data, JsonEntity.class);
 
-        JsonEntity response = new JsonEntity();
-        return ResponseEntity.ok(gson.toJson(response));
+        Logic logic = new Logic(entity);
+
+        return ResponseEntity.ok(gson.toJson(logic.calculate()));
     }
 
     @RequestMapping(value="/linear", method = RequestMethod.POST)
-    public ResponseEntity<String> calculateLinear(@Valid @RequestBody String data) {
+    @ResponseBody
+    public ResponseEntity<String> calculateLinear(@RequestBody String data) {
         JsonEntity entity = gson.fromJson(data, JsonEntity.class);
         JsonEntity response = new JsonEntity();
 

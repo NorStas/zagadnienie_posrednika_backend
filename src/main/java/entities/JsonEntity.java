@@ -1,19 +1,19 @@
 package entities;
 
 public class JsonEntity {
-    private double supplier1;
+    private double supplier1;   //ilosc dostawcy
     private double supplier2;
-    private double recipient1;
+    private double recipient1;  // odbiorca
     private double recipient2;
     private double supplier3;
     private double supplier4;
-    private double supplier1fee;
+    private double supplier1fee;  // oplata
     private double supplier2fee;
-    private double recipient1fee;
+    private double recipient1fee;  // oplata
     private double recipient2fee;
     private double supplier3fee;
     private double supplier4fee;
-    private double sup1rec1cost;
+    private double sup1rec1cost;  // koszt dla tras
     private double sup1rec2cost;
     private double sup2rec1cost;
     private double sup2rec2cost;
