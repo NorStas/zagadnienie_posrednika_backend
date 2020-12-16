@@ -24,19 +24,19 @@ public class InputModel {
 
         this.supply = suppliers;
         this.demand = demands;
-        this.sells = sellsArr;
-        this.buys = buysArr;
+        this.sells = buysArr;
+        this.buys = sellsArr;
         this.routeArr = routeArrs;
 
         this.profitArr = new double[]{
                 sells[0] - routeArr[0] - buys[0],
-                sells[1] - routeArr[1] - buys[0],
-                sells[2] - routeArr[2] - buys[0],
-                sells[3] - routeArr[3] - buys[0],
-                sells[0] - routeArr[4] - buys[1],
+                sells[0] - routeArr[1] - buys[1],
+                sells[0] - routeArr[2] - buys[2],
+                sells[0] - routeArr[3] - buys[3],
+                sells[1] - routeArr[4] - buys[0],
                 sells[1] - routeArr[5] - buys[1],
-                sells[2] - routeArr[6] - buys[1],
-                sells[3] - routeArr[7] - buys[1],
+                sells[1] - routeArr[6] - buys[2],
+                sells[1] - routeArr[7] - buys[3],
         };
     }
 
@@ -52,19 +52,19 @@ public class InputModel {
 
         this.supply = suppliers;
         this.demand = demands;
-        this.sells = sellsArr;
-        this.buys = buysArr;
+        this.sells = buysArr;
+        this.buys = sellsArr;
         this.routeArr = routeArrs;
 
         this.profitArr = new double[]{
                 sells[0] - routeArr[0] - buys[0],
-                sells[1] - routeArr[1] - buys[0],
-                sells[2] - routeArr[2] - buys[0],
-                sells[3] - routeArr[3] - buys[0],
-                sells[0] - routeArr[4] - buys[1],
+                sells[0] - routeArr[1] - buys[1],
+                sells[0] - routeArr[2] - buys[2],
+                sells[0] - routeArr[3] - buys[3],
+                sells[1] - routeArr[4] - buys[0],
                 sells[1] - routeArr[5] - buys[1],
-                sells[2] - routeArr[6] - buys[1],
-                sells[3] - routeArr[7] - buys[1],
+                sells[1] - routeArr[6] - buys[2],
+                sells[1] - routeArr[7] - buys[3],
         };
     }
 

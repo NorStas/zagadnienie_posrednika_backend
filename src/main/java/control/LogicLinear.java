@@ -29,7 +29,7 @@ public class LogicLinear {
         constraints.add( new LinearConstraint( new double[]{0, 0, 0, 0, 1, 1, 0, 0}, Relationship.LEQ, json.getMax()));
         constraints.add( new LinearConstraint( new double[]{0, 0, 0, 0, 0, 0, 1, 1}, Relationship.EQ, inputModel.getSupply()[3] ) );
 
-        constraints.add( new LinearConstraint( new double[]{1, 0, 1, 0, 1, 0, 1, 0}, Relationship.GEQ, json.getMin()));
+        constraints.add( new LinearConstraint( new double[]{1, 0, 1, 0, -1, 0, 1, 0}, Relationship.GEQ, json.getMin()));
         constraints.add( new LinearConstraint( new double[]{0, 1, 0, 1, 0, 1, 0, 1}, Relationship.EQ, inputModel.getDemand()[1] ) );
 
 
